@@ -370,9 +370,9 @@ class Novel:
         option = self.show_location(description, options)
         if option == "1":
             print("Thanks for playing")
-        if options == "2":
+        elif options == "2":
             self.begin()
-        if options == "3":
+        elif options == "3":
             self.current_atk = 10
             self.current_def_max = 3
             self.current_perception = 10
@@ -383,6 +383,94 @@ class Novel:
             self.persuasion_check = 0
             self.begin()
             self.boss_health = 120
+
+    def vault3d(self):
+        description = "You go down the steps. Once you reach the bottom you find yourself face to face with another guard. What do you do?"
+        options = ["Go back up the stairs", "Fight the guard", "Try to persuade the guard to leave", "Take a look around", "Do nothing"]
+        option = self.show_location(description, options)
+        if option == "1":
+            print("You hurry up the stairs")
+            self.vault2b()
+        elif option == "2":
+
+    def vault3d1(self):
+        description = "You are in combat with the guard."
+        options = ["Make another attempt at persuading the guard to not fight you.", "Fight it.", "Do nothing.", "Go back up the stairs"]
+        option = self.show_location(description, options)
+        if option == "1":
+            self.persuasion_fail()n_roll()
+            self.persuasion2(self.persuasion_check)
+        elif option == "2":
+            self.atk1()
+            self.enemy1_alive_check()
+            self.enemy1atk()
+            self.vault3d1()
+
+        elif option == "3":
+            self.enemy1atk()
+            self.vault3d1()
+        elif option == "4":
+            self.vault2b()
+        else:
+            self.validation()
+            self.vault3d1()
+
+    def persuasion2(self, p):
+        if p >= 100:
+            print("You convince the guard to let you pass.")
+            self.vault3d2()
+        elif p < 100:
+            self.persuasion_fail()
+            self.enemy1atk()
+            self.vault3d1()
+
+    def vault3d3(self):
+        description = "The guard is dead. What do you do?"
+        options = ["Search the body", "Proceed through the door", "Do nothing", "Go back up the stairs"]
+        options = self.show_location(description, options)
+        if option == "1":
+            self.perception_roll()
+            self.perception4(self.perception_check)
+        elif option == "2":
+            self.vaultf()
+        elif option == "3":
+            self.vault3d3()
+        elif option == "4":
+            print("As you head up the stairs, you look back behind you and notice that a new guard has appeared.")
+            self.vault2b()
+        else:
+            self.validation()
+            self.vault3d3()
+
+    def perception4(self, p):
+        if p >= 20:
+            print("You find that the guard is equipped with a huge sword and take it")
+            self.current_atk = self.current_atk + 30
+        elif p < 20:
+            print("You find nothing")
+            self.vault3d2()
+
+    def vault3d2(self):
+        description = "You are face to face with a door. What do you do?"
+        options = ["Proceed through the door", "Do nothing", "Go back up the stairs"]
+        option = self.show_location(description, options)
+        if option == "1":
+            self.vaultf()
+        elif option == "2":
+            print("You do nothing.")
+            self.vault3d2()
+        elif option == "3":
+            print("As you head up the stairs, you look back behind you and notice that the guard has returned")
+        else:
+            self.validation()
+            self.vault3d2()
+        
+
+
+
+
+
+
 
 
 

@@ -398,7 +398,7 @@ class Novel:
         options = ["Make another attempt at persuading the guard to not fight you.", "Fight it.", "Do nothing.", "Go back up the stairs"]
         option = self.show_location(description, options)
         if option == "1":
-            self.persuasion_fail()n_roll()
+            self.persuasion_roll()
             self.persuasion2(self.persuasion_check)
         elif option == "2":
             self.atk1()
@@ -427,7 +427,7 @@ class Novel:
     def vault3d3(self):
         description = "The guard is dead. What do you do?"
         options = ["Search the body", "Proceed through the door", "Do nothing", "Go back up the stairs"]
-        options = self.show_location(description, options)
+        option = self.show_location(description, options)
         if option == "1":
             self.perception_roll()
             self.perception4(self.perception_check)
@@ -464,7 +464,7 @@ class Novel:
         else:
             self.validation()
             self.vault3d2()
-        
+
 
 
 

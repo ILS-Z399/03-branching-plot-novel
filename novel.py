@@ -194,11 +194,11 @@ class Novel:
 
     def perception1(self, p):
         '''perception check for area 1'''
-        if p >= 10:
+        if p >= 95:
             print("After looking around you find a book titled \"The Art of Persuasion\"\nAfter reading through it, you feel like you've mastered the art of persuasion")
             self.current_persuasion = self.current_persuasion + 80
             self.start()
-        elif p < 10:
+        elif p < 95:
             self.perception_fail()
             self.start()
 

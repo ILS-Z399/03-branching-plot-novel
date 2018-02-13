@@ -1,25 +1,6 @@
 # 03-Branching-plot-novel
 
-Choose your adventure! Your assignment is to implement a branching-plot novel.
-
-The requirements for this assignment are as follows:
-
-* Write a Python program for playing a simple "branching-plot novel" game
-* A branching-plot novel is a work of fiction that allows the reader to participate in the story by making choices. The narrative branches along various paths, determined by the reader's choices. (Learn more (Links to an external site.)Links to an external site. about branching-plot novels.)
-* Present the player with a narrative segment and a series of choices
-* Each of those choices branches to a new narrative segment
-* Provide some happy and some sad endings
-* To get a perfect score, you will need to think creatively! Think about ways you can make this project more interesting or fun.
-
-To complete this assignment you will need to understand:
-
-* Python basic control structures like [if and else (and elif)](http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/ifstatements.html)
-* How to [compare two values](https://www.tutorialspoint.com/python/comparison_operators_example.htm) in Python
-* How to [accept user input](http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/io.html)
-* How to [create and call a function](https://www.learnpython.org/en/Functions) in Python
-* How to use the Python [dictionary data type](http://www.pythonforbeginners.com/dictionary/how-to-use-dictionaries-in-python)
-
-To turn in the assignment, submit the URL to your GitHub repository.
+My program for the branching novel assignment. I use a series of functions and import random to create some replayability by addin encounters, variability and choices/locking out of choices.
 
 ---
 
